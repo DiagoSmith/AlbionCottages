@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Navigation from './Components/Navigation'
 
 const Home = () => (
   <div>
@@ -13,7 +14,7 @@ const About = () => (
   </div>
 );
 
-const Cottages = ({ match }) => (
+const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
   </div>
@@ -43,22 +44,18 @@ const Topics = ({ match }) => (
   </div>
 );
 
+const routes =
+[{name: 'Home', path: ''},
+{name: 'About', path: 'about'},
+{name: 'Topics', path: 'topics'},
+];
+
 const App = () => (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-      </ul>
-
-      <hr />
+      <Navigation
+        routes={routes}>
+      </Navigation>
 
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
