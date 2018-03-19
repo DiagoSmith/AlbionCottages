@@ -1,12 +1,16 @@
 import React from "react";
 import { NavContainer } from "./style";
 import NavItem from "./NavItem";
+import { withRouter } from "react-router-dom";
 
-const Navigation = ({ children, isHome, routes }) => {
+const Navigation = ({ children, location, routes }) => {
+  const isHome = location.pathname === "/";
+
   const mapRoutes = routes.map(route => (
-    <NavItem name={route.name} path={route.path} />
+    <NavItem key={route.name} name={route.name} path={route.path} isHome={isHome} />
   ));
-  return <NavContainer>{mapRoutes}</NavContainer>;
+  return <NavContainer isHome={isHome}>{mapRoutes}</NavContainer>;
 };
 
-export default Navigation;
+export default withRouter(Navigation);
+

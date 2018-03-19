@@ -1,10 +1,10 @@
 import React from "react";
-import { Link, withRouter} from "react-router-dom";
+import { Link } from "react-router-dom";
 import {StyledItem} from './style';
 
-const NavItem = ({name,path}) => {
+const NavItem = ({name,path,isHome}) => {
     return (
-        <StyledItem>
+        <StyledItem isHome={isHome}>
              <Link to={`/${path}`}>{name}</Link>
         </StyledItem>
     )

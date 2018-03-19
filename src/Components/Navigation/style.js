@@ -1,18 +1,24 @@
 import styled from "styled-components";
 
+export const NavWrapper = styled.div`
+  
+`;
+
 export const NavContainer = styled.ul`
   display: flex;
   justify-content: space-between;
   list-style: none;
   flex-wrap: wrap;
   flex-basis: 100%;
+  position: ${props => props.isHome ? 'absolute':'relative'};
+  width: 100%;
 `;
 
 export const StyledItem = styled.li`
   flex: 1;
   font-size: 20px;
-  color: orange;
   padding: 10px 10px 10px 10px;
+  color: ${props => props.isHome ? 'white':'black'};
 `;
 
 export const Icon = styled.svg``;

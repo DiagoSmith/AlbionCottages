@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Navigation from './Components/Navigation'
+import Home from './Components/Home'
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
+// const Home = () => (
+//   <div>
+//     <h2>Home</h2>
+//   </div>
+// );
 
 const About = () => (
   <div>
@@ -48,6 +49,9 @@ const routes =
 [{name: 'Home', path: ''},
 {name: 'About', path: 'about'},
 {name: 'Topics', path: 'topics'},
+{name: 'Book Now', path: 'book'},
+{name: 'Contact', path: 'contact'}
+
 ];
 
 const App = () => (
