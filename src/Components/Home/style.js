@@ -28,7 +28,8 @@ export const Hero = styled.div`
   }
 `;
 
-export const HeroText = styled.h2`
+export const HeroText = styled.h1`
   color: white;
   z-index: 10;
+  font-size: 36px;
 `;

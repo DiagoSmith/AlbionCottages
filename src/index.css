@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis|PT+Serif');
+
 body {
   margin: 0;
   padding: 0;
@@ -10,8 +12,13 @@ html {
 	line-height: 1.6;
 }
 
+p, a {
+  font-family: 'Dosis', sans-serif;
+}
+
 h1, h2, h3, h4, h5 {
-	line-height: 1.2;
+  line-height: 1.2;
+  font-family: 'PT Serif', serif;
 }
 
 a {
