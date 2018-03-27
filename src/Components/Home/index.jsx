@@ -1,14 +1,12 @@
 import React from "react";
-import { HomeContainer, Hero, StyledImage } from "./style";
-import homeImage from "../../Assets/Images/homeImage.jpg";
+import { HomeContainer, Hero, HeroText } from "./style";
 
 const Home = () => {
   return (
     <HomeContainer>
       <Hero>
-        <StyledImage src={homeImage} />
+        <HeroText>Welcome to the Albion, your home away from home</HeroText>
       </Hero>
-      Step into seaside serendipity
       {/* <SearchBar></SearchBar> */}
     </HomeContainer>
   );

@@ -3,12 +3,6 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Navigation from './Components/Navigation'
 import Home from './Components/Home'
 
-// const Home = () => (
-//   <div>
-//     <h2>Home</h2>
-//   </div>
-// );
-
 const About = () => (
   <div>
     <h2>About</h2>

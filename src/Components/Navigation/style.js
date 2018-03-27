@@ -9,9 +9,8 @@ export const NavContainer = styled.ul`
   justify-content: space-between;
   list-style: none;
   flex-wrap: wrap;
-  flex-basis: 100%;
-  position: ${props => props.isHome ? 'absolute':'relative'};
-  width: 100%;
+  position: relative;
+  z-index: 1000;
 `;
 
 export const StyledItem = styled.li`
