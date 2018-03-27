@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const NavWrapper = styled.div`
-  
-`;
+export const NavWrapper = styled.div``;
 
 export const NavContainer = styled.ul`
   display: flex;
@@ -11,13 +9,17 @@ export const NavContainer = styled.ul`
   flex-wrap: wrap;
   position: relative;
   z-index: 1000;
+  align-self: auto;
+  padding: 0;
 `;
 
 export const StyledItem = styled.li`
   flex: 1;
-  font-size: 20px;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
   padding: 10px 10px 10px 10px;
-  color: ${props => props.isHome ? 'white':'black'};
+  color: ${props => (props.isHome ? "white" : "black")};
 `;
 
 export const Icon = styled.svg``;
