@@ -20,6 +20,7 @@ export const StyledItem = styled.li`
   text-transform: uppercase;
   padding: 10px 10px 10px 10px;
   color: ${props => (props.isHome ? "white" : "black")};
+  border-bottom: ${props => (props.isHome ? "none" : "#e4e4e4 1px dashed")};
 `;
 
 export const Icon = styled.svg``;

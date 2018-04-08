@@ -1,7 +1,11 @@
 import React from "react";
 import { HomeContainer, Hero, HeroText } from "./style";
+import {CottageMap} from '../../Helpers/CottageMap';
+
 
 const Home = () => {
+  
+  // console.log(CottageMap.get(256));
   return (
     <HomeContainer>
       <Hero>

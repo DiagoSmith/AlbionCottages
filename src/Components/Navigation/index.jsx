@@ -3,7 +3,7 @@ import { NavContainer } from "./style";
 import NavItem from "./NavItem";
 import { withRouter } from "react-router-dom";
 
-const Navigation = ({ children, location, routes }) => {
+const Navigation = ({ location, routes }) => {
   const isHome = location.pathname === "/";
 
   const mapRoutes = routes.map(route => (
