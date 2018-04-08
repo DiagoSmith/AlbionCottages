@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Navigation from './Components/Navigation'
 import Home from './Components/Home'
+import {Cottage} from './Components/Cottage'
 
 const About = () => (
   <div>
@@ -42,8 +43,9 @@ const Topics = ({ match }) => (
 const routes =
 [{name: 'Home', path: ''},
 {name: 'About', path: 'about'},
-{name: 'Topics', path: 'topics'},
+{name: 'The Cottages', path: 'cottages'},
 {name: 'Book Now', path: 'book'},
+{name: 'Activities', path: 'activities'},
 {name: 'Contact', path: 'contact'}
 
 ];
@@ -57,7 +59,7 @@ const App = () => (
 
       <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/topics" component={Topics} />
+      <Route path="/cottages" component={Cottage} />
     </div>
   </Router>
 );
