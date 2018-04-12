@@ -9,7 +9,7 @@ import { HeroBanner } from './Components/HeroBanner'
 export const Cottage = () => {
     return (
         <React.Fragment>
-            <HeroBanner image='./homeImage.jpg' title=''/>
+            <HeroBanner image='./homeImage.jpg' title='Cottage 267'/>
             {/* <DividerText>
 
             </DividerText>
