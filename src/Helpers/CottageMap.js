@@ -3,6 +3,7 @@ export const CottageMap = new Map(
         [254, {
         name: '254',
         tagline: '',
+        heroImagePath: '',
         details: {
             Amenities: []
         },
@@ -11,6 +12,7 @@ export const CottageMap = new Map(
     [256, {
         name: '256',
         tagline: '',
+        heroImagePath: '',
         details: {
             Amenities: [],
             description: '',
