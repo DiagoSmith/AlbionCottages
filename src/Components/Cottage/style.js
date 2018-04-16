@@ -7,7 +7,7 @@ export const HeroImage = styled.div`
   background-image: ${props => `linear-gradient(
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.7)
-      ), url(${props.imagePath})` };
+      ), url(${props.imagePath})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -27,9 +27,23 @@ export const SubText = styled.p`
   color: white;
   text-transform: uppercase;
   font-size: 25px;
-  padding-left:50px;
+  padding-left: 50px;
   margin: 5px 0px;
   width: auto;
 `;
 
-export const DividerText = styled.p``;
+export const DividerText = styled.h2`
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+`;
+
+export const StyledInput = styled.input`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 9px;
+  width: 60%;
+`;
