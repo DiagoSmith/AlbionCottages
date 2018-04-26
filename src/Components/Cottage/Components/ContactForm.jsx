@@ -6,22 +6,21 @@ class ContactForm extends React.Component {
   static propTypes = {
     cottage: string.isRequired
   };
-  constructor() {
-    super();
-    this.state = {
-      name: "",
-      email: "",
-      messsage: ""
-    };
-  }
+
+  state = {
+    name: "",
+    email: "",
+    phonenumber: 0
+  };
 
   handleChange = (e, field) => {
     console.log(field);
     this.setState({ [field]: e.target.value });
   };
 
-  handleSubmit = () => {
-    window.alert("no worries");
+  handleSubmit = e => {
+    e.preventDefault();
+    window.alert("submitted succesfully");
   };
 
   render() {
@@ -33,16 +32,16 @@ class ContactForm extends React.Component {
         name={name}
         type={nameToType[name]}
         value={this.state[name]}
-        required
+        // required
         onChange={e => this.handleChange(e, name)}
       />
     ));
 
     return (
-      <form>
+      <form onSubmit={e => this.handleSubmit(e)}>
         {inputs}
-        <textarea name="message" />
-        <button onSubmit={this.handleSubmit}> Submit </button>
+        {/* <textarea name="message" /> */}
+        <button> Submit </button>
       </form>
     );
   }
