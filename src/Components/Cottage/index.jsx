@@ -2,6 +2,7 @@ import React from "react";
 import { DividerText } from "./style";
 import { HeroBanner } from "./Components/HeroBanner";
 import ContactForm from "./Components/ContactForm";
+import Carousel from "./Components/Carousel";
 // import {PhotoGallery, ContactForm, HeroBanner, Details} from './Components'
 // import CottageMap from '../../Helpers/CottageMap';
 
@@ -16,14 +17,13 @@ export const Cottage = () => {
         amet porttitor enim. Quisque quam quam, sodales at felis in, interdum
         commodo magna.
       </DividerText>
-      {/* <PhotoGallery>
-
-            </PhotoGallery>
+      <Carousel imagePaths={["./homeImage.jpg", "./homeImage.jpg"]} />
+      {/*
             <Details>
 
             </Details>
              */}
-      <ContactForm />
+      <ContactForm cottage="Cottage 267" />
     </React.Fragment>
   );
 };

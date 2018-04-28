@@ -1,6 +1,8 @@
 import React from "react";
 import { string, object } from "prop-types";
-import { StyledInput } from "../style";
+import { StyledForm } from "../style";
+
+import InputWithLabel from "./InputWithLabel";
 
 class ContactForm extends React.Component {
   static propTypes = {
@@ -27,22 +29,24 @@ class ContactForm extends React.Component {
     const nameToType = { name: "text", email: "email", phonenumber: "number" };
 
     const inputs = ["name", "email", "phonenumber"].map(name => (
-      <StyledInput
+      <InputWithLabel
         key={name}
         name={name}
         type={nameToType[name]}
         value={this.state[name]}
-        // required
         onChange={e => this.handleChange(e, name)}
       />
     ));
 
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        {inputs}
-        {/* <textarea name="message" /> */}
-        <button> Submit </button>
-      </form>
+      <React.Fragment>
+        <StyledForm onSubmit={e => this.handleSubmit(e)}>
+          <h2>Request Information: {this.props.cottage}</h2>
+          {inputs}
+          {/* <textarea name="message" /> */}
+          <button> Submit </button>
+        </StyledForm>
+      </React.Fragment>
     );
   }
 }
