@@ -3,6 +3,7 @@ import { DividerText } from "./style";
 import { HeroBanner } from "./Components/HeroBanner";
 import ContactForm from "./Components/ContactForm";
 import Carousel from "./Components/Carousel";
+import Details from "./Components/Details";
 // import {PhotoGallery, ContactForm, HeroBanner, Details} from './Components'
 // import CottageMap from '../../Helpers/CottageMap';
 
@@ -27,11 +28,9 @@ export const Cottage = () => {
           "./homeImage.jpg"
         ]}
       />
-      {/*
-            <Details>
 
-            </Details>
-             */}
+      <Details />
+
       <ContactForm cottage="Cottage 267" />
     </React.Fragment>
   );

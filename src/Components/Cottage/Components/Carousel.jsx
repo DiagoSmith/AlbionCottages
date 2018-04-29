@@ -1,13 +1,7 @@
 import React from "react";
 import { arrayOf, string } from "prop-types";
 import NukaCarousel from "nuka-carousel";
-import {
-  CarouselImage,
-  StyledCarousel,
-  CarouselContainer,
-  CarouselController,
-  CarouselDot
-} from "../style";
+import { CarouselImage, StyledCarousel, CarouselContainer } from "../style";
 
 class Carousel extends React.Component {
   static propTypes = {

@@ -78,18 +78,65 @@ export const StyledForm = styled.form`
 export const CarouselImage = styled.img``;
 
 export const CarouselContainer = styled.div`
-  width: 50%;
+  width: 70%;
+  /* max-height: 500px; */
   margin: auto;
   margin-top: 20px;
-`;
-
-export const CarouselController = styled.button``;
-
-export const CarouselDot = styled.button`
-  color: white;
 `;
 
 // export const StyledCarousel = styled(NukaCarousel)`
 //   width: 500px;
 //   height: 300px;
 // `;
+
+//Amenities section
+
+export const DetailsContainer = styled.div`
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+`;
+
+export const InfoColumn = styled.div`
+  flex-basis: 80%;
+  margin-left: 50px;
+  flex-direction: column;
+`;
+
+export const FactColumn = styled.div`
+  flex-direction: column;
+  text-align: center;
+`;
+
+export const AmenitiesContainer = styled.div`
+  border-top: 1px gray dashed;
+  width: 100%;
+  display: flex;
+`;
+
+export const Amenities = styled.div`
+  padding: 5px;
+`;
+
+export const AmenitiesTitle = styled.p`
+  padding-top: 10px;
+  font-style: bold;
+  margin-right: 20px;
+`;
+
+export const AmenityItem = styled.p`
+  display: inline-block;
+  width: 50%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+`;
+
+{
+  /* <DetailsContainer>
+      <NormalColumn />
+      <InfoColumn>
+        <Amenities />
+      </InfoColumn>
+    </DetailsContainer> */
+}
