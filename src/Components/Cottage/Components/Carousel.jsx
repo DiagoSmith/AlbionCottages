@@ -42,12 +42,14 @@ class Carousel extends React.Component {
     return (
       <CarouselContainer>
         {imageCount >= imagePaths.length ? (
-          <NukaCarousel swiping>{images}</NukaCarousel>
+          <NukaCarousel renderBottomCenterControls={() => {}} swiping>
+            {images}
+          </NukaCarousel>
         ) : (
           <div>
             {/* add loading placeholder here */}
-            {"loading..."}
-            <div> {images}</div>
+            "Images are loading..."
+            <div style={{ visibility: "hidden" }}> {images}</div>
           </div>
         )}
       </CarouselContainer>

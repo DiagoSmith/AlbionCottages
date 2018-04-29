@@ -1,6 +1,6 @@
 import React from "react";
 import { string, object } from "prop-types";
-import { HeroImage, HeroText, SubText } from "../style";
+import { HeroImage, HeroText, SubText, TextWrapper } from "../style";
 
 export const HeroBanner = ({
   image,
@@ -11,10 +11,12 @@ export const HeroBanner = ({
 
   return (
     <HeroImage imagePath={imagePath}>
-      <HeroText> {title} </HeroText>
-      <SubText> 5 Bedrooms </SubText>
-      <SubText> Sleeps 6 </SubText>
-      <SubText> £150 per Night</SubText>
+      <TextWrapper>
+        <HeroText> {title} </HeroText>
+        <SubText> 5 Bedrooms </SubText>
+        <SubText> Sleeps 6 </SubText>
+        <SubText> £150 per Night</SubText>
+      </TextWrapper>
     </HeroImage>
   );
 };

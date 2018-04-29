@@ -13,11 +13,20 @@ export const Cottage = () => {
     <React.Fragment>
       <HeroBanner image="./homeImage.jpg" title="Cottage 267" />
       <DividerText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit
-        amet porttitor enim. Quisque quam quam, sodales at felis in, interdum
-        commodo magna.
+        A seaside sanctuary to relax and take in the sea air. Enjoy a sanctum
+        within walking distance from the golden sands of the yorkshire coast.
       </DividerText>
-      <Carousel imagePaths={["./homeImage.jpg", "./homeImage.jpg"]} />
+      <Carousel
+        imagePaths={[
+          "./homeImage.jpg",
+          "./homeImage.jpg",
+          "./homeImage.jpg",
+          "./homeImage.jpg",
+          "./homeImage.jpg",
+          "./homeImage.jpg",
+          "./homeImage.jpg"
+        ]}
+      />
       {/*
             <Details>
 

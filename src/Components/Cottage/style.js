@@ -16,30 +16,34 @@ export const HeroImage = styled.div`
   position: relative;
 `;
 
-export const HeroText = styled.h1`
+export const TextWrapper = styled.div`
   color: white;
   z-index: 10;
-  font-size: 3rem;
-  margin-left: 50px;
-  width: auto;
+  width: 80%;
+  margin: auto;
+`;
+export const HeroText = styled.h1`
+  font-size: 4rem;
 `;
 
 export const SubText = styled.p`
-  z-index: 10;
-  color: white;
+  /* z-index: 10;
+  color: white; */
   text-transform: uppercase;
   font-size: 25px;
-  padding-left: 50px;
+  /* padding-left: 6rem;
   margin: 5px 0px;
-  width: auto;
+  width: auto; */
 `;
 
 //DIVIDER TEXT
 
 export const DividerText = styled.h2`
-  width: 80%;
+  width: 70%;
+  text-align: center;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
 
 //CONTACT FORM
