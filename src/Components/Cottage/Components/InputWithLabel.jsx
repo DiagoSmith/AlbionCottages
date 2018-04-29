@@ -24,7 +24,7 @@ const InputWithLabel = ({ name, onChange, value }) => {
         type={nameToType[name]}
         value={value}
         placeholder={nameToPlaceHolder[name]}
-        require
+        required
         onChange={e => onChange(e, name)}
       />
     </StyledContainer>

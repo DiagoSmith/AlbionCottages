@@ -52,6 +52,14 @@ export const StyledInput = styled.input`
 
 export const StyledLabel = styled.label``;
 
+export const StyledTextArea = styled.textarea`
+  display: block;
+  margin-bottom: 20px;
+  padding: 9px;
+  width: 500px;
+  height: 100px;
+`;
+
 export const StyledContainer = styled.div``;
 
 export const StyledForm = styled.form`

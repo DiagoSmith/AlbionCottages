@@ -26,6 +26,7 @@ class Carousel extends React.Component {
     const { imagePaths } = this.props;
     const { imageCount } = this.state;
 
+    //Load in all the images;
     const images = imagePaths.map(imagePath => {
       const path = require(`${imagePath}`);
       return (
@@ -37,8 +38,6 @@ class Carousel extends React.Component {
         />
       );
     });
-
-    console.log(images);
 
     return (
       <CarouselContainer>
@@ -55,9 +54,5 @@ class Carousel extends React.Component {
     );
   }
 }
-
-// Carousel.propTypes = {
-//   imagePaths: arrayOf(string) //array or object of strings
-// };
 
 export default Carousel;

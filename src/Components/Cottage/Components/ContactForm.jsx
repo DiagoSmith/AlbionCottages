@@ -1,6 +1,7 @@
 import React from "react";
 import { string, object } from "prop-types";
-import { StyledForm } from "../style";
+import { StyledForm, StyledTextArea } from "../style";
+import { sendEmail } from "../../../Api/api";
 
 import InputWithLabel from "./InputWithLabel";
 
@@ -16,13 +17,26 @@ class ContactForm extends React.Component {
   };
 
   handleChange = (e, field) => {
-    console.log(field);
     this.setState({ [field]: e.target.value });
+  };
+
+  sendMail = async formData => {
+    try {
+      const result = await sendEmail(formData);
+      console.log(`hello`, result);
+      // do something with response
+    } catch (error) {
+      // do something with error
+      this.setState({});
+      console.log("error==", error);
+    }
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    window.alert("submitted succesfully");
+    const { name, email, phonenumber } = this.state;
+    const formData = { name: name, email: email, phonenumber: phonenumber };
+    this.sendMail(formData);
   };
 
   render() {
@@ -43,7 +57,10 @@ class ContactForm extends React.Component {
         <StyledForm onSubmit={e => this.handleSubmit(e)}>
           <h2>Request Information: {this.props.cottage}</h2>
           {inputs}
-          {/* <textarea name="message" /> */}
+          <StyledTextArea
+            name="message"
+            placeholder="Write your message here..."
+          />
           <button> Submit </button>
         </StyledForm>
       </React.Fragment>
