@@ -1,8 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Navigation from './Components/Navigation'
-import Home from './Components/Home'
-import {Cottage} from './Components/Cottage'
+import Navigation from "./Components/Navigation";
+import Footer from "./Components/Footer";
+import Home from "./Components/Home";
+import { Cottage } from "./Components/Cottage";
+import { Website } from "./style";
 
 const About = () => (
   <div>
@@ -40,26 +42,25 @@ const Topics = ({ match }) => (
   </div>
 );
 
-const routes =
-[{name: 'Home', path: ''},
-{name: 'About', path: 'about'},
-{name: 'The Cottages', path: 'cottages'},
-{name: 'Book Now', path: 'book'},
-{name: 'Activities', path: 'activities'},
-{name: 'Contact', path: 'contact'}
-
+const routes = [
+  { name: "Home", path: "" },
+  { name: "About", path: "about" },
+  { name: "The Cottages", path: "cottages" },
+  { name: "Book Now", path: "book" },
+  { name: "Activities", path: "activities" },
+  { name: "Contact", path: "contact" }
 ];
 
 const App = () => (
   <Router>
     <div>
-      <Navigation
-        routes={routes}>
-      </Navigation>
-
-      <Route exact path="/" component={Home} />
-      <Route path="/about" component={About} />
-      <Route path="/cottages" component={Cottage} />
+      <Navigation routes={routes} />
+      <Website>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/cottages" component={Cottage} />
+      </Website>
+      <Footer />
     </div>
   </Router>
 );
