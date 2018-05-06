@@ -3,7 +3,7 @@ import homeImage from "../../Assets/Images/homeImage.jpg";
 
 export const HomeContainer = styled.div`
   top: 0;
-  position: absolute;
+  margin-top: -80px;
   width: 100%;
 `;
 
@@ -20,6 +20,7 @@ export const Hero = styled.div`
   ::after {
     content: "";
     position: absolute;
+    height: 590px;
     left: 0;
     right: 0;
     top: 0;
@@ -33,4 +34,13 @@ export const HeroText = styled.h1`
   z-index: 10;
   font-size: 36px;
   padding: 50px;
+`;
+
+export const DatepickerContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 50%;
+  margin: auto;
+  margin-top: -20px;
 `;
