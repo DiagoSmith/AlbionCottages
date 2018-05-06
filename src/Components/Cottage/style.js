@@ -121,7 +121,7 @@ export const Amenities = styled.div`
 
 export const AmenitiesTitle = styled.p`
   padding-top: 10px;
-  font-style: bold;
+  font-weight: bold;
   margin-right: 20px;
 `;
 
