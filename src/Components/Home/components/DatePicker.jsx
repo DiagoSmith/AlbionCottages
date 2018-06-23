@@ -1,36 +1,62 @@
 import React from "react";
-import DayPickerInput from "react-day-picker/DayPickerInput";
-import { DateUtils } from "react-day-picker";
-import "react-day-picker/lib/style.css";
+import "react-dates/initialize";
+import { DateRangePicker } from "react-dates";
+import "react-dates/lib/css/_datepicker.css";
+import { func, instanceOf } from "prop-types";
 
 class DatePicker extends React.Component {
-  static defaultProps = {
-    numberOfMonths: 2
+  static propTypes = {
+    fetchAvailability: func.isRequired,
+    addStartDate: func.isRequired,
+    addEndDate: func.isRequired,
+    startDate: instanceOf(Date),
+    endDate: instanceOf(Date)
   };
-
   getInitialState = () => {
-    return { from: undefined, to: undefined };
+    return { startDate: undefined, endDate: undefined };
   };
 
   state = this.getInitialState();
-  handleDayChange = day => {
-    const range = DateUtils.addDayToRange(day, this.state);
-    this.setState(range);
-  };
+
   resetDays = () => {
     this.setState(this.getInitialState);
   };
+  isDayBlocked = () => {
+    // this.props.blockedDates
+  };
+
+  submitDays = () => {
+    this.props.fetchAvailability();
+  };
+  handleDatesChange = dates => {
+    const { addStartDate, addEndDate } = this.props;
+    addStartDate(dates.startDate);
+    addEndDate(dates.endDate);
+  };
   render() {
-    const { selectedDay, from, to } = this.state;
-    const { numberOfMonths } = this.props;
+    const { startDate, endDate } = this.props;
+
     return (
-      <DayPickerInput
-        onDayChange={this.handleDayChange}
-        dayPickerProps={{
-          numberofMonths: numberOfMonths,
-          selectedDays: [from, { from, to }]
-        }}
-      />
+      <React.Fragment>
+        <DateRangePicker
+          startDate={startDate} // momentPropTypes.momentObj or null,
+          startDatePlaceholderText="Check-In"
+          startDateId="your_unique_start_date_id" // PropTypes.string.isRequired,
+          endDate={endDate} // momentPropTypes.momentObj or null,
+          endDatePlaceholderText="Check-Out"
+          endDateId="your_unique_end_date_id" // PropTypes.string.isRequired,
+          onDatesChange={({ startDate, endDate }) =>
+            this.handleDatesChange({ startDate, endDate })
+          } // PropTypes.func.isRequired,
+          focusedInput={this.state.focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
+          onFocusChange={focusedInput => this.setState({ focusedInput })} // PropTypes.func.isRequired,
+          showClearDates
+          minimumNights={2}
+          isDayBlocked={this.isDayBlocked()}
+          small
+        />
+        <button onClick={this.submitDays}> Check Availability </button>
+      </React.Fragment>
     );
   }
 }
