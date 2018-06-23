@@ -1,7 +1,7 @@
 import React from "react";
 import { HomeContainer, Hero, HeroText, DatepickerContainer } from "./style";
 // import {CottageMap} from '../../Helpers/CottageMap';
-import DatePicker from "./components/DatePicker";
+import DatePickerContainer from "../../Containers/DatePickerContainer";
 
 const Home = () => {
   // console.log(CottageMap.get(256));
@@ -13,9 +13,7 @@ const Home = () => {
         </Hero>
         {/* <SearchBar></SearchBar> */}
       </HomeContainer>
-      <DatepickerContainer>
-        <DatePicker />
-      </DatepickerContainer>
+      <DatePickerContainer />
     </React.Fragment>
   );
 };
