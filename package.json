@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "dotenv": "^5.0.1",
+    "dotenv": "^6.0.0",
     "moment": "^2.22.2",
     "nodemailer": "^4.6.4",
     "nuka-carousel": "^4.1.0",

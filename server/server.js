@@ -19,5 +19,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/email", email);
+app.use("/getAvailability", airbnb);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
