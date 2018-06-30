@@ -4,7 +4,10 @@ import Navigation from "./Components/Navigation";
 import Footer from "./Components/Footer";
 import Home from "./Components/Home";
 import { Cottage } from "./Components/Cottage";
+import Results from "./Components/Results";
 import { Website } from "./style";
+
+import ResultsContainer from "./Containers/ResultsContainer";
 
 const About = () => (
   <div>
@@ -59,6 +62,7 @@ const App = () => (
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/cottages" component={Cottage} />
+        <Route path="/results" component={ResultsContainer} />
       </Website>
       <Footer />
     </div>

@@ -40,7 +40,7 @@ export function fetchCalendar(cottage, startDate, endDate) {
     dispatch({ type: FETCH_CALENDAR });
     getAvailability(cottage, startDate, endDate)
       .then(response => {
-        const payload = response.calendar.days;
+        const payload = response;
         dispatch(fetchCalendarSuccess(cottage, payload));
       })
       .catch(err => {
