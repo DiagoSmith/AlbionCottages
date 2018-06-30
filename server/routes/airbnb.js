@@ -13,11 +13,11 @@ const headers = {
 };
 
 router.post("/", function(req, res) {
-  const { property, startDate, endDate } = req.body;
+  const { cottageId, startDate, endDate } = req.body;
   console.log("REQUEST:", req.body);
 
   const options = {
-    uri: `/${property}/${startDate}/${endDate}`,
+    uri: `/${cottageId}/${startDate}/${endDate}`,
     baseUrl,
     method: "GET",
     headers
