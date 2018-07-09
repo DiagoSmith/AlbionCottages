@@ -2,7 +2,8 @@ import React from "react";
 import "react-dates/initialize";
 import { DateRangePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
-import { func, instanceOf } from "prop-types";
+import { func, instanceOf, typeOf, obj } from "prop-types";
+import { withRouter } from "react-router";
 
 class DatePicker extends React.Component {
   static propTypes = {
@@ -11,6 +12,7 @@ class DatePicker extends React.Component {
     addEndDate: func.isRequired,
     startDate: instanceOf(Date),
     endDate: instanceOf(Date)
+    // history: typeOf(obj)
   };
   getInitialState = () => {
     return { startDate: undefined, endDate: undefined };
@@ -26,7 +28,10 @@ class DatePicker extends React.Component {
   };
 
   submitDays = () => {
-    this.props.fetchAvailability();
+    const { fetchAvailability, history } = this.props;
+    fetchAvailability();
+    // this should only happen on successful calendar fetching
+    history.push("/results");
   };
   handleDatesChange = dates => {
     const { addStartDate, addEndDate } = this.props;
@@ -61,4 +66,4 @@ class DatePicker extends React.Component {
   }
 }
 
-export default DatePicker;
+export default withRouter(DatePicker);
