@@ -1,43 +1,30 @@
 import React from "react";
-import { string, func, bool, instanceOf } from "prop-types";
+import { bool } from "prop-types";
 import { connect } from "react-redux";
-// import { addStartDate, addEndDate, fetchCalendar } from "../Actions/actions";
-// import DatePicker from "../Components/Home/components/DatePicker";
-import { makeGetBlockedDates, makeGetAvailableCottages } from "../selectors";
+import { makeGetAvailableCottages } from "../selectors";
+
+import Results from "../Components/Results";
 
 class ResultsContainer extends React.Component {
   static propTypes = {
-    // fetchCalendar: func.isRequired,
-    // addStartDate: func.isRequired,
-    // addEndDate: func.isRequired,
-    // startDate: instanceOf(Date),
-    // endDate: instanceOf(Date),
-    // cottage: string.isRequired,
     loading: bool.isRequired
-    // availableCottages: one
   };
 
   render() {
-    const { loading, blockedDates, availableCottages } = this.props;
-
-    const cottagesAvail = availableCottages.map(cottage => (
-      <li key={cottage}>{cottage}</li>
-    ));
+    const { loading, ...rest } = this.props;
 
     return (
       <div>
-        {loading ? <div> loading sorry</div> : <div> {cottagesAvail} </div>}
+        {loading ? <div> loading sorry</div> : <Results {...rest}> </Results>}
       </div>
     );
   }
 }
 
 function makeMapStateToProps(state) {
-  const getBlockedDates = makeGetBlockedDates();
   const getAvailableCottages = makeGetAvailableCottages();
   function mapStateToProps(state) {
     return {
-      blockedDates: getBlockedDates(state),
       availableCottages: getAvailableCottages(state),
       loading: state.loading
     };
@@ -45,13 +32,4 @@ function makeMapStateToProps(state) {
   return mapStateToProps(state);
 }
 
-// const mapDispatchToProps = {
-//   addStartDate,
-//   addEndDate,
-//   fetchCalendar
-// };
-
-export default connect(
-  makeMapStateToProps
-  //   mapDispatchToProps
-)(ResultsContainer);
+export default connect(makeMapStateToProps)(Results);

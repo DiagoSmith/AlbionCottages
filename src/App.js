@@ -49,7 +49,7 @@ const routes = [
   { name: "Home", path: "" },
   { name: "About", path: "about" },
   { name: "The Cottages", path: "cottages" },
-  { name: "Book Now", path: "book" },
+  { name: "Book Now", path: "results" },
   { name: "Activities", path: "activities" },
   { name: "Contact", path: "contact" }
 ];
