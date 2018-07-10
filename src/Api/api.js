@@ -1,5 +1,6 @@
 import axios from "axios";
 import moment from "moment";
+import { COTTAGE_IDS } from "../Helpers/CottageMap";
 
 // Time Constants
 const now = moment().format("YYYY-MM-DD");
@@ -9,9 +10,6 @@ const nextMonth = moment()
 
 // Send Email Enquiry
 export const sendEmail = formData => axios.post("email", formData);
-
-//todo - use constants from the cottage map here
-const cottageIds = ["12047603", "17604337", "17605474", "17588819"];
 
 //
 // Get availability for Cottage/Cottages
@@ -31,7 +29,7 @@ export const getAvailability = (
   }
 
   // Request calendar for all cottages
-  const cottageRequests = cottageIds.map(cottageId => {
+  const cottageRequests = Object.values(COTTAGE_IDS).map(cottageId => {
     const payload = { cottageId, startDate, endDate };
     return axios.post("getAvailability", payload);
   });
@@ -60,8 +58,3 @@ export const getAvailability = (
     )
     .catch(err => console.log(err));
 };
-
-// 12047603  cottage 136
-// 17604337  cottage 138
-// 17605474  cottage 140
-// 17588819  cottage 136A

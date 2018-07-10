@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+
+import { CottageMap } from "../../../Helpers/CottageMap";
 import {
   ResultsTitle,
   ResultWrapper,
@@ -15,8 +17,11 @@ import {
 
 import imgsrc from "../../Cottage/Components/homeImage.jpg";
 
-const Result = cottage => {
-  console.log(cottage);
+const Result = ({ cottage }) => {
+  const CottageInfo = CottageMap.get(cottage);
+
+  const { name } = CottageInfo;
+
   return (
     <ResultWrapper>
       <LeftColumn>
@@ -24,11 +29,12 @@ const Result = cottage => {
       </LeftColumn>
 
       <MiddleColumn>
-        <CottageTitle>{cottage.cottage}</CottageTitle>
+        <CottageTitle>{`Cottage ${name}`}</CottageTitle>
         <CottageDescription />
       </MiddleColumn>
       <RightColumn>
-        <Price>£150 </Price>
+        {/* write helper function to calculate price based on length of stay,pass length of stay through in props  */}
+        <Price>€200 </Price>
         <BookButton>Book me</BookButton>
       </RightColumn>
     </ResultWrapper>
